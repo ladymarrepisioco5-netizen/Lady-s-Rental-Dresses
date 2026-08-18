@@ -1,0 +1,6 @@
+{
+  "name": "Banking Application",
+  "description": "Comprehensive banking application with animated intro splash screens, account management, transactions, transfers, balance inquiry, and detailed ledger history.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

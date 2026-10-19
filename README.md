@@ -1,6 +1,8 @@
-﻿# Lady's Rental
+﻿# Lady's Rental Dresses
 
 Luxury designer dress rental & haute couture boutique.
+
+My Business
 
 ## Run Locally
 

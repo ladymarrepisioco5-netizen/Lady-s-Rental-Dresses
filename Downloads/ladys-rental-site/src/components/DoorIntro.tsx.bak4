@@ -1,0 +1,118 @@
+﻿import React, { useEffect, useState } from 'react';
+
+const IMAGE = '/assets/images/DoorPink.jpg';
+// Laki ng pinto. Baguhin para lumaki o lumiit.
+const DOOR_WIDTH = 'min(92vw, 820px)';
+const DOOR_HEIGHT = '80vh';
+// Bilis ng pagbukas sa milliseconds. Dagdagan para mas mabagal (hal. 8000).
+const OPEN_MS = 4000;
+const EASE = 'cubic-bezier(0.4, 0, 0.6, 1)';
+// Gaano kalawak bumukas ang pinto (degrees).
+const ANGLE = 80;
+
+export const DoorIntro: React.FC = () => {
+  const [visible, setVisible] = useState(true);
+  const [opening, setOpening] = useState(false);
+
+  useEffect(() => {
+    if (!visible) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [visible]);
+
+  const handleOpen = () => {
+    if (opening) return;
+    setOpening(true);
+    window.setTimeout(() => setVisible(false), OPEN_MS + 300);
+  };
+
+  if (!visible) return null;
+
+  const leaf = (side: 'left' | 'right'): React.CSSProperties => ({
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    [side]: 0,
+    width: '50%',
+    overflow: 'hidden',
+    transformOrigin: side === 'left' ? 'left center' : 'right center',
+    transform: opening
+      ? `rotateY(${side === 'left' ? ANGLE : -ANGLE}deg)`
+      : 'rotateY(0deg)',
+    transition: `transform ${OPEN_MS}ms ${EASE}`,
+    willChange: 'transform',
+    backgroundColor: '#e48fb4',
+  });
+
+  const pic = (side: 'left' | 'right'): React.CSSProperties => ({
+    position: 'absolute',
+    top: 0,
+    [side]: 0,
+    width: '200%',
+    height: '100%',
+    backgroundImage: `url(${IMAGE})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  });
+
+  return (
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center"
+      style={{ pointerEvents: opening ? 'none' : 'auto' }}
+      role="dialog"
+      aria-label="Welcome door"
+    >
+      {/* madilim na paligid, nawawala habang bumubukas */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at center, #1c1424 0%, #09090d 70%)',
+          opacity: opening ? 0 : 1,
+          transition: `opacity ${OPEN_MS * 0.7}ms ease ${OPEN_MS * 0.15}ms`,
+        }}
+      />
+
+      <div className="relative flex flex-col items-center gap-6 px-4">
+        <p
+          className="text-xs uppercase tracking-[0.35em] text-pink-200/80"
+          style={{ opacity: opening ? 0 : 1, transition: 'opacity 500ms ease' }}
+        >
+          Lady&rsquo;s Rental
+        </p>
+
+        <div
+          style={{
+            position: 'relative',
+            width: DOOR_WIDTH,
+            height: DOOR_HEIGHT,
+            perspective: '1400px',
+            boxShadow: opening ? 'none' : '0 25px 60px rgba(0,0,0,0.6)',
+            transition: 'box-shadow 800ms ease',
+          }}
+        >
+          <div style={leaf('left')}>
+            <div style={pic('left')} />
+          </div>
+          <div style={leaf('right')}>
+            <div style={pic('right')} />
+          </div>
+        </div>
+
+        <button
+          onClick={handleOpen}
+          className="rounded-full bg-white/90 px-8 py-3 text-sm font-medium text-neutral-900 shadow-lg backdrop-blur transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a86a]"
+          style={{ opacity: opening ? 0 : 1, transition: 'opacity 300ms ease' }}
+        >
+          Explore Collection
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default DoorIntro;
+

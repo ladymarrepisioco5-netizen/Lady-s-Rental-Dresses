@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "enabled": false,
+    "title": "Lady's Rental Raffle",
+    "description": "",
+    "targetParticipants": 25,
+    "startDate": "",
+    "endDate": "",
+    "prizeDescription": "",
+    "rules": ""
+  },
+  "participants": [],
+  "winnerId": null
+}

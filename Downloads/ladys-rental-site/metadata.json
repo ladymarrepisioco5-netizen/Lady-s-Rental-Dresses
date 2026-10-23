@@ -1,0 +1,8 @@
+{
+  "name": "Lady's Rental — Luxury Designer Dress Rental & Haute Couture Boutique",
+  "description": "Exclusive evening gown and haute couture dress rentals with seamless booking, custom sizing, real media uploads, and an atelier management dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

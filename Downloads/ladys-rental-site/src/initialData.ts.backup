@@ -1,0 +1,1031 @@
+import { SiteData } from './types.ts';
+
+export const initialSiteData: SiteData = {
+  settings: {
+    brandName: "Lady's Rental",
+    tagline: "Magical Fairy Garden & Luxury Dress Boutique",
+    logoUrl: "",
+    primaryBg: "#0b0b0e",
+    secondaryBg: "#14141a",
+    accentColor: "#f472b6",
+    fontDisplay: "Cormorant Garamond",
+    fontBody: "Plus Jakarta Sans",
+    borderRadius: "rounded-lg",
+    cardStyle: "refined",
+    defaultTheme: "dark",
+    announcementBanner: {
+      text: "✨ Enchanted Dress Experience: Standard 3-Day Luxury Rentals with Island-Wide Delivery & Fitting Showroom",
+      link: "#catalog",
+      enabled: true
+    },
+    navigation: [
+      { id: "nav-1", label: "Catalog", href: "#catalog", enabled: true },
+      { id: "nav-2", label: "Short Dresses", href: "#catalog?length=short", enabled: true },
+      { id: "nav-3", label: "Long Dresses", href: "#catalog?length=long", enabled: true },
+      { id: "nav-4", label: "Loyalty Card", href: "#loyalty", enabled: true },
+      { id: "nav-5", label: "How It Works", href: "#how-it-works", enabled: true },
+      { id: "nav-6", label: "Showroom", href: "#showroom", enabled: true }
+    ],
+    footer: {
+      description: "Lady's Rental brings fairy-tale enchantment and red-carpet luxury together. Rent exquisite designer evening gowns, debut dresses, and cocktail silhouettes for life's most magical celebrations.",
+      copyright: "© 2026 Lady's Rental Boutique. All rights reserved. Handcrafted with magical fairy elegance.",
+      showSocials: true,
+      columns: [
+        {
+          id: "col-1",
+          title: "Dress Collection",
+          links: [
+            { label: "All Dresses", href: "#catalog" },
+            { label: "Short Dresses", href: "#catalog?length=short" },
+            { label: "Long Dresses", href: "#catalog?length=long" },
+            { label: "Featured Gowns", href: "#featured" },
+            { label: "Occasions", href: "#occasions" }
+          ]
+        },
+        {
+          id: "col-2",
+          title: "VIP Loyalty & Concierge",
+          links: [
+            { label: "Loyalty Rewards Program", href: "#loyalty" },
+            { label: "How To Rent (3-Day)", href: "#how-it-works" },
+            { label: "Payment & Verification", href: "#policies" },
+            { label: "Track Booking & Receipts", href: "#track" }
+          ]
+        },
+        {
+          id: "col-3",
+          title: "Atelier & Showroom",
+          links: [
+            { label: "Showroom Address: Bonifacio High Street, BGC, Taguig", href: "#contact" },
+            { label: "concierge@ladysrental.com", href: "mailto:concierge@ladysrental.com" },
+            { label: "+63 (917) 842-5239", href: "tel:+639178425239" },
+            { label: "Admin Portal", href: "#admin" }
+          ]
+        }
+      ]
+    }
+  },
+
+  welcomePage: {
+    enabled: true,
+    title: "Lady's Rental",
+    subtitle: "Your Magical Dress Experience Begins Here.",
+    buttonText: "Explore Collection",
+    bgImageUrl: "/src/assets/images/enchanted_teal_door_garden_1791999912250.jpg",
+    fairyImageUrl: "/src/assets/images/thinkerbell_fairy_guide_1792003754140.jpg",
+    fairyName: "Thinkerbell",
+    fairyMessage: "Hello! I'm Thinkerbell. I'm here to assist you.",
+    particlesEnabled: true,
+    animationSpeed: "normal",
+    skipAllowed: true
+  },
+
+  loyaltyConfig: {
+    cardTitle: "Lady's Rental VIP Loyalty Club",
+    fiveRentalDiscountPercent: 50,
+    tenRentalRewardDescription: "One Free 3-Day Dress Rental",
+    heartStampCount: 10,
+    terms: "Every completed and returned dress rental earns 1 heart stamp. 5 stamps unlock 50% OFF your next rental. 10 stamps grant One Free 3-Day Dress Rental."
+  },
+
+  characters: [
+    {
+      id: "char-1",
+      name: "Thinkerbell",
+      title: "The Fairy Guide",
+      description: "Beloved fairy guide with shimmering translucent wings and glowing fairy dust who welcomes you through the magical turquoise door.",
+      avatarUrl: "/src/assets/images/thinkerbell_fairy_guide_1792003754140.jpg",
+      category: "fairy",
+      isAvailable: true
+    },
+    {
+      id: "char-2",
+      name: "Princess Aurelia",
+      title: "Royal Gala Muse",
+      description: "Embodies regal poise, sparkling tiaras, and floor-sweeping red-carpet silhouettes.",
+      avatarUrl: "/src/assets/images/character_fashion_princess_1791999979205.jpg",
+      category: "princess",
+      isAvailable: true
+    },
+    {
+      id: "char-3",
+      name: "Vivienne",
+      title: "Haute Fashion Muse",
+      description: "Sophisticated Paris-trained stylist with a flair for modern tailoring and high-glamour chic.",
+      avatarUrl: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+      category: "muse",
+      isAvailable: true
+    },
+    {
+      id: "char-4",
+      name: "Celeste",
+      title: "Starlight Enchantress",
+      description: "A twilight dreamweaver drawn to shimmering tulle, iridescent crystals, and starlit evening balls.",
+      avatarUrl: "/src/assets/images/dress_royal_sapphire_cape_1791965046088.jpg",
+      category: "fantasy",
+      isAvailable: true
+    }
+  ],
+
+  occasionsList: [
+    "Photoshoot",
+    "Birthday",
+    "Debut",
+    "Wedding Guest",
+    "Bridesmaid",
+    "Formal Event",
+    "Graduation",
+    "Evening Party",
+    "Dinner Event",
+    "Special Celebration"
+  ],
+
+  accessoriesCatalog: [
+    {
+      id: "acc-1",
+      name: "Chandelier Crystal Drop Earrings",
+      category: "earrings",
+      price: 350,
+      photo: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+      description: "Brilliant pavé crystal statement drops that catch golden light beautifully.",
+      isAvailable: true,
+      isRentable: true
+    },
+    {
+      id: "acc-2",
+      name: "Champagne Satin Minaudière Clutch",
+      category: "clutch",
+      price: 450,
+      photo: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+      description: "Structured evening minaudière with delicate rose-gold metal clasp and optional chain strap.",
+      isAvailable: true,
+      isRentable: true
+    },
+    {
+      id: "acc-3",
+      name: "Emerald Green Velvet Ribbon Choker",
+      category: "necklace",
+      price: 250,
+      photo: "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg",
+      description: "Rich Italian velvet choker accented with an antique gold filigree pendant.",
+      isAvailable: true,
+      isRentable: true
+    },
+    {
+      id: "acc-4",
+      name: "Strap Metallic Stiletto Heels (Rose Gold)",
+      category: "heels",
+      price: 550,
+      photo: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg",
+      description: "Slender 3.5-inch metallic rose gold evening heels with cushioned arch support.",
+      isAvailable: true,
+      isRentable: true
+    }
+  ],
+
+  homepage: {
+    hero: {
+      headline: "Wear the Magic. Rent the Extraordinary.",
+      subtitle: "Discover our enchanted dress collection with standard 3-Day rentals, custom sizing, and white-glove doorstep delivery across the Philippines.",
+      ctaText: "Explore Collection",
+      ctaLink: "#catalog",
+      secondaryCtaText: "Enter Magical Garden",
+      secondaryCtaLink: "#entrance",
+      mediaType: "image",
+      mediaUrl: "/src/assets/images/enchanted_teal_door_garden_1791999912250.jpg",
+      enabled: true
+    },
+    featuredSection: {
+      title: "Featured Dream Dresses",
+      subtitle: "Hand-selected gala gowns and showstopping silhouettes curated by our head boutique stylist.",
+      mode: "manual",
+      selectedDressIds: ["LR-101", "LR-102", "LR-103", "LR-104", "LR-105", "LR-106"],
+      limit: 6,
+      desktopColumns: 3,
+      mobileColumns: 1,
+      showPrice: true,
+      showBadges: true,
+      showSizes: true,
+      showAvailability: true,
+      cardStyle: "refined",
+      enabled: true
+    },
+    categoriesSection: {
+      title: "Curated Occasions",
+      subtitle: "Find the dream dress tailored specifically for debuts, weddings, photoshoots, and galas.",
+      enabled: true
+    },
+    newArrivalsSection: {
+      title: "New Boutique Acquisitions",
+      subtitle: "Fresh silhouettes just added to our dressing chambers for the upcoming party season.",
+      limit: 3,
+      enabled: true
+    },
+    popularSection: {
+      title: "Most Loved Dresses",
+      subtitle: "Celebrated across grand galas, debuts, and glamorous birthday celebrations.",
+      limit: 3,
+      enabled: true
+    },
+    promotionsSection: {
+      bannerText: "✨ VIP Loyalty Privilege: Earn 1 heart stamp with every completed rental. 5 stamps = 50% OFF, 10 stamps = FREE 3-Day Rental!",
+      promoCode: "MAGIC2026",
+      discountDesc: "Standard 3-Day rental period with complimentary minor spill and sanitization care.",
+      enabled: true
+    },
+    aboutSection: {
+      title: "The Lady's Rental Story",
+      headline: "Where Fairy Garden Whimsy Meets Luxury Fashion",
+      story: "Founded in the heart of Manila and Bonifacio Global City, Lady's Rental believes every woman deserves to experience the magic of couture fashion without purchasing gowns worn only once. Our wardrobe contains individually curated designer pieces, each professionally sanitised, steamed, and fitted for your special moment.",
+      image: "/src/assets/images/enchanted_teal_door_garden_1791999912250.jpg",
+      enabled: true
+    },
+    howItWorksSection: {
+      title: "Simple 4-Step Rental Process",
+      subtitle: "Effortless, transparent, and magical from reservation to return.",
+      steps: [
+        {
+          step: "01",
+          title: "Choose Your Dress & Dates",
+          desc: "Select your dream dress and size. Standard rental is 3 Days (Delivery Day, Event Day, Return Day)."
+        },
+        {
+          step: "02",
+          title: "Submit & Upload Payment Proof",
+          desc: "Submit your rental details and upload your GCash, Maya, or bank transfer payment confirmation screenshot."
+        },
+        {
+          step: "03",
+          title: "Admin Verification & Receipt",
+          desc: "Our boutique team inspects your payment, confirms your booking, and issues your downloadable official PDF rental receipt."
+        },
+        {
+          step: "04",
+          title: "Shine & Earn Loyalty Hearts",
+          desc: "Dazzle at your occasion! Return on Day 3 in our prepaid satchel to earn stamps toward your 50% off or free dress reward."
+        }
+      ],
+      enabled: true
+    },
+    testimonialsSection: {
+      title: "Cherished by Our Patrons",
+      items: [
+        {
+          id: "t-1",
+          quote: "The Aurelia champagne gown made my 18th Debut photoshoot look like an absolute fairy tale! The 3-day rental gave me plenty of time for rehearsal and shoot day.",
+          author: "Mariella Santos",
+          occasion: "18th Grand Debut",
+          rating: 5
+        },
+        {
+          id: "t-2",
+          quote: "Renting from Lady's Rental was seamless. Payment proof was verified within 20 minutes and my PDF receipt was ready to download immediately.",
+          author: "Camille Reyes",
+          occasion: "Wedding Maid of Honor",
+          rating: 5
+        },
+        {
+          id: "t-3",
+          quote: "Already completed 5 rentals and redeemed my 50% discount! The black and pink glitter loyalty card is so gorgeous.",
+          author: "Bianca De Leon",
+          occasion: "Annual Charity Gala",
+          rating: 5
+        }
+      ],
+      enabled: true
+    },
+    faqSection: {
+      title: "Frequently Asked Questions",
+      subtitle: "Everything you need to know about renting with Lady's Rental.",
+      items: [
+        {
+          id: "faq-1",
+          question: "How long is the standard rental period?",
+          answer: "Our standard rental duration is 3 days. Day 1 is your delivery or pickup day, Day 2 is your special event day, and Day 3 is your return day. Need extra time? Additional days can be added for a small daily fee."
+        },
+        {
+          id: "faq-2",
+          question: "How does payment verification work?",
+          answer: "After completing your booking form, transfer your rental fee and refundable security deposit via GCash, Maya, or BDO/BPI Bank Transfer, then upload your payment screenshot. Our administrator will verify the amount and issue an official PDF receipt."
+        },
+        {
+          id: "faq-3",
+          question: "How do the Loyalty Rewards work?",
+          answer: "Every completed and returned dress rental earns 1 heart stamp on your digital loyalty card. At 5 completed rentals, you unlock 50% OFF your next rental. At 10 completed rentals, you earn ONE FREE 3-DAY DRESS RENTAL!"
+        },
+        {
+          id: "faq-4",
+          question: "What is your cleaning and damage policy?",
+          answer: "Do not attempt to wash or dry-clean the dress yourself! Every rental includes complimentary standard eco-sanitization. Light wrinkles steam out easily, and minor wear is covered."
+        }
+      ],
+      enabled: true
+    },
+    contactSection: {
+      title: "Visit Our Fitting Showroom",
+      subtitle: "Experience private VIP styling appointments and tailored fittings.",
+      showroomAddress: "450 Haute Lane, Suite 4B, Bonifacio Global City, Taguig, Metro Manila",
+      showroomHours: "Monday – Saturday: 10:00 AM – 8:00 PM (Fitting Appointments Welcome)",
+      phone: "+63 (917) 842-5239",
+      email: "concierge@ladysrental.com",
+      instagram: "@ladysrental.ph",
+      whatsapp: "+63 (917) 842-5239",
+      enabled: true
+    },
+    sectionOrder: [
+      "hero",
+      "featured",
+      "categories",
+      "howItWorks",
+      "newArrivals",
+      "about",
+      "testimonials",
+      "faq",
+      "contact"
+    ]
+  },
+
+  categories: [
+    {
+      id: "cat-1",
+      slug: "gala-black-tie",
+      name: "Gala & Black Tie",
+      description: "Floor-sweeping silhouettes and opulent textures designed for prestigious galas and formal dinners.",
+      coverImage: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+      displayOrder: 1
+    },
+    {
+      id: "cat-2",
+      slug: "red-carpet-couture",
+      name: "Red Carpet Couture",
+      description: "Bespoke architectural creations with dramatic capes, trains, and crystal hand-embroidery.",
+      coverImage: "/src/assets/images/dress_royal_sapphire_cape_1791965046088.jpg",
+      displayOrder: 2
+    },
+    {
+      id: "cat-3",
+      slug: "wedding-guest-ballroom",
+      name: "Wedding Guest & Debut",
+      description: "Romantic tiered tulle, draped silks, and soft pastel corsetry for high-society nuptials and debuts.",
+      coverImage: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+      displayOrder: 3
+    },
+    {
+      id: "cat-4",
+      slug: "cocktail-evening-soiree",
+      name: "Cocktail & Soirée",
+      description: "Sleek backless silk slips, chic short silhouettes, and sculpted dresses for cocktail evenings.",
+      coverImage: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg",
+      displayOrder: 4
+    }
+  ],
+
+  dresses: [
+    {
+      id: "LR-101",
+      name: "The Aurelia Liquid Silk Cape Gown",
+      designer: "Maison d'Or Atelier",
+      description: "A showstopping champagne gold liquid-silk floor-length evening gown featuring a high gathered neckline, an asymmetric cascading cape train, and a sculpted waistline that commands the room with ethereal fairy grace.",
+      category: "red-carpet-couture",
+      lengthCategory: "long",
+      color: "Champagne Gold",
+      style: "Draped Cape Gown",
+      condition: "Pristine",
+      photos: [
+        "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+        "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg"
+      ],
+      coverPhoto: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+      videos: [
+        {
+          url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+          title: "Runway Motion Walkthrough & Silk Drape",
+          thumbnail: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg"
+        }
+      ],
+      sizes: [
+        { size: "US 2 / S", bust: "32-33 in", waist: "24-25 in", hips: "35-36 in", length: "61 in", inStock: true },
+        { size: "US 4 / M", bust: "34-35 in", waist: "26-27 in", hips: "37-38 in", length: "61 in", inStock: true },
+        { size: "US 6 / L", bust: "36-37 in", waist: "28-29 in", hips: "39-40 in", length: "62 in", inStock: true },
+        { size: "US 8 / XL", bust: "38-39 in", waist: "30-31 in", hips: "41-42 in", length: "62 in", inStock: false }
+      ],
+      rentalPrice3Day: 2800, // ₱2,800 for 3 days
+      rentalPrice5Day: 3800,
+      rentalPrice7Day: 4600,
+      extraDayRate: 500,
+      securityDeposit: 1500,
+      cleaningFee: 0,
+      retailPrice: 32000,
+      inventoryCount: 3,
+      isAvailable: true,
+      isFeatured: true,
+      isNewArrival: true,
+      isPopular: true,
+      isVisible: true,
+      occasions: ["Photoshoot", "Debut", "Formal Event", "Wedding Guest", "Dinner Event"],
+      stylingAdvice: {
+        makeupStyle: "Soft champagne glow with warm bronze contouring and luminous cheekbones.",
+        lipColor: "Subtle rosewood nude with high-shine gloss.",
+        hairstyle: "Sleek low chignon with face-framing tendrils.",
+        tip: "Pair with delicate chandelier earrings and gold metallic heels to let the silk cape remain the focal point."
+      },
+      recommendedAccessories: [
+        {
+          id: "acc-1",
+          name: "Chandelier Crystal Drop Earrings",
+          category: "earrings",
+          price: 350,
+          photo: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+          description: "Pavé crystal drops that catch golden light beautifully.",
+          isAvailable: true,
+          isRentable: true
+        },
+        {
+          id: "acc-2",
+          name: "Champagne Satin Minaudière Clutch",
+          category: "clutch",
+          price: 450,
+          photo: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+          description: "Structured evening minaudière with rose-gold metal clasp.",
+          isAvailable: true,
+          isRentable: true
+        }
+      ],
+      views: {
+        front: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+        back: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+        side: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg"
+      },
+      tags: ["Champagne", "Silk", "Cape", "Gala", "Debut", "Long Dress"]
+    },
+    {
+      id: "LR-102",
+      name: "The Verona Emerald Velvet Slit Gown",
+      designer: "Atelier Vesper",
+      description: "Crafted from plush Italian devoré emerald velvet, this opulent floor-length off-shoulder gown features delicate gold thread embroidery along the sweetheart corseted neckline and a dramatic side slit.",
+      category: "gala-black-tie",
+      lengthCategory: "long",
+      color: "Emerald Green",
+      style: "Slit Off-Shoulder Gown",
+      condition: "Pristine",
+      photos: [
+        "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg",
+        "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg"
+      ],
+      coverPhoto: "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg",
+      videos: [
+        {
+          url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+          title: "Showroom Detail & Velvet Texture Video",
+          thumbnail: "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg"
+        }
+      ],
+      sizes: [
+        { size: "US 2 / S", bust: "32-33 in", waist: "25-26 in", hips: "35-36 in", length: "60 in", inStock: true },
+        { size: "US 4 / M", bust: "34-35 in", waist: "27-28 in", hips: "37-38 in", length: "60 in", inStock: true },
+        { size: "US 6 / L", bust: "36-37 in", waist: "29-30 in", hips: "39-40 in", length: "61 in", inStock: true }
+      ],
+      rentalPrice3Day: 2600, // ₱2,600 for 3 days
+      rentalPrice5Day: 3500,
+      rentalPrice7Day: 4200,
+      extraDayRate: 450,
+      securityDeposit: 1500,
+      cleaningFee: 0,
+      retailPrice: 29000,
+      inventoryCount: 3,
+      isAvailable: true,
+      isFeatured: true,
+      isNewArrival: false,
+      isPopular: true,
+      isVisible: true,
+      occasions: ["Formal Event", "Dinner Event", "Evening Party", "Special Celebration"],
+      stylingAdvice: {
+        makeupStyle: "Old Hollywood glamour with classic winged eyeliner and golden-amber highlights.",
+        lipColor: "Deep velvet crimson or rich burgundy.",
+        hairstyle: "Glamorous side-swept Hollywood waves.",
+        tip: "An emerald ribbon choker or vintage gold drop earrings bring out the intricate neckline embroidery."
+      },
+      recommendedAccessories: [
+        {
+          id: "acc-3",
+          name: "Emerald Green Velvet Ribbon Choker",
+          category: "necklace",
+          price: 250,
+          photo: "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg",
+          description: "Velvet choker with antique gold filigree pendant.",
+          isAvailable: true,
+          isRentable: true
+        }
+      ],
+      views: {
+        front: "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg",
+        back: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+        side: "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg"
+      },
+      tags: ["Emerald", "Velvet", "Black Tie", "Long Dress"]
+    },
+    {
+      id: "LR-103",
+      name: "The Rosaline Petal Tiered Tulle Gown",
+      designer: "Valérie & Co.",
+      description: "A dreamy fairy-tale confection of hand-gathered blush pink and dusty rose tulle layers. The boned illusion corset is scattered with delicate three-dimensional organza petals and subtle iridescent glitter.",
+      category: "wedding-guest-ballroom",
+      lengthCategory: "long",
+      color: "Blush Pink",
+      style: "Tiered Ball Gown",
+      condition: "Pristine",
+      photos: [
+        "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+        "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg"
+      ],
+      coverPhoto: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+      videos: [],
+      sizes: [
+        { size: "US 2 / S", bust: "32 in", waist: "24-25 in", hips: "Free", length: "59 in", inStock: true },
+        { size: "US 4 / M", bust: "34 in", waist: "26-27 in", hips: "Free", length: "59 in", inStock: true },
+        { size: "US 6 / L", bust: "36 in", waist: "28-29 in", hips: "Free", length: "60 in", inStock: true }
+      ],
+      rentalPrice3Day: 2400, // ₱2,400 for 3 days
+      rentalPrice5Day: 3200,
+      rentalPrice7Day: 3900,
+      extraDayRate: 400,
+      securityDeposit: 1200,
+      cleaningFee: 0,
+      retailPrice: 26000,
+      inventoryCount: 2,
+      isAvailable: true,
+      isFeatured: true,
+      isNewArrival: true,
+      isPopular: true,
+      isVisible: true,
+      occasions: ["Debut", "Birthday", "Photoshoot", "Wedding Guest", "Bridesmaid"],
+      stylingAdvice: {
+        makeupStyle: "Romantic petal blush with dewy glass skin and soft pink shimmering eyelids.",
+        lipColor: "Blush peach or strawberry tint with soft gloss.",
+        hairstyle: "Textured whimsical half-up braid adorned with delicate pearls or baby's breath.",
+        tip: "Perfect for debutantes and garden weddings. Keep jewelry minimal with dainty pearl studs."
+      },
+      recommendedAccessories: [
+        {
+          id: "acc-2",
+          name: "Champagne Satin Minaudière Clutch",
+          category: "clutch",
+          price: 450,
+          photo: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+          description: "Structured evening clutch in rose-gold metal.",
+          isAvailable: true,
+          isRentable: true
+        }
+      ],
+      views: {
+        front: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+        back: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+        side: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg"
+      },
+      tags: ["Blush Pink", "Tulle", "Debut", "Fairy", "Long Dress"]
+    },
+    {
+      id: "LR-104",
+      name: "The Seraphina Burgundy Silk Halter Slip",
+      designer: "Maison d'Or Atelier",
+      description: "A flirty, chic knee-length short cocktail dress in heavy burgundy silk charmeuse. Features an alluring draped halter neckline, open back with crossed straps, and a fluted hem that sways effortlessly with every step.",
+      category: "cocktail-evening-soiree",
+      lengthCategory: "short",
+      color: "Burgundy Wine",
+      style: "Halter Cocktail Slip",
+      condition: "Pristine",
+      photos: [
+        "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg"
+      ],
+      coverPhoto: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg",
+      videos: [],
+      sizes: [
+        { size: "US 2 / S", bust: "32-33 in", waist: "24-25 in", hips: "35-36 in", length: "38 in", inStock: true },
+        { size: "US 4 / M", bust: "34-35 in", waist: "26-27 in", hips: "37-38 in", length: "39 in", inStock: true },
+        { size: "US 6 / L", bust: "36-37 in", waist: "28-29 in", hips: "39-40 in", length: "39 in", inStock: true }
+      ],
+      rentalPrice3Day: 1800, // ₱1,800 for 3 days (Short Dress)
+      rentalPrice5Day: 2400,
+      rentalPrice7Day: 2900,
+      extraDayRate: 350,
+      securityDeposit: 1000,
+      cleaningFee: 0,
+      retailPrice: 18500,
+      inventoryCount: 3,
+      isAvailable: true,
+      isFeatured: true,
+      isNewArrival: false,
+      isPopular: true,
+      isVisible: true,
+      occasions: ["Birthday", "Photoshoot", "Evening Party", "Dinner Event", "Special Celebration"],
+      stylingAdvice: {
+        makeupStyle: "Smoky bronze eye with refined cat-eye wing and golden champagne highlighter.",
+        lipColor: "Bold plum berry or brick red velvet.",
+        hairstyle: "Effortless high ponytail with textured waves.",
+        tip: "Pair with strappy metallic stiletto heels and a metallic clutch for chic evening vibes."
+      },
+      recommendedAccessories: [
+        {
+          id: "acc-4",
+          name: "Strap Metallic Stiletto Heels (Rose Gold)",
+          category: "heels",
+          price: 550,
+          photo: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg",
+          description: "Metallic rose gold heels with comfortable arch support.",
+          isAvailable: true,
+          isRentable: true
+        }
+      ],
+      views: {
+        front: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg",
+        back: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg",
+        side: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg"
+      },
+      tags: ["Burgundy", "Silk", "Cocktail", "Short Dress", "Party"]
+    },
+    {
+      id: "LR-105",
+      name: "The Celestial Sapphire Dramatic Cape Gown",
+      designer: "Atelier Vesper",
+      description: "A commanding midnight royal sapphire gown with a sculpted structured bodice, glistening metallic thread accents, and an attached floor-skimming royal chiffon cape.",
+      category: "red-carpet-couture",
+      lengthCategory: "long",
+      color: "Royal Sapphire Blue",
+      style: "Cape Column Gown",
+      condition: "Pristine",
+      photos: [
+        "/src/assets/images/dress_royal_sapphire_cape_1791965046088.jpg",
+        "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg"
+      ],
+      coverPhoto: "/src/assets/images/dress_royal_sapphire_cape_1791965046088.jpg",
+      videos: [],
+      sizes: [
+        { size: "US 2 / S", bust: "32-33 in", waist: "25 in", hips: "35 in", length: "61 in", inStock: true },
+        { size: "US 4 / M", bust: "34-35 in", waist: "27 in", hips: "37 in", length: "61 in", inStock: true },
+        { size: "US 6 / L", bust: "36-37 in", waist: "29 in", hips: "39 in", length: "62 in", inStock: true }
+      ],
+      rentalPrice3Day: 2900, // ₱2,900 for 3 days
+      rentalPrice5Day: 3900,
+      rentalPrice7Day: 4800,
+      extraDayRate: 500,
+      securityDeposit: 1500,
+      cleaningFee: 0,
+      retailPrice: 34000,
+      inventoryCount: 2,
+      isAvailable: true,
+      isFeatured: true,
+      isNewArrival: true,
+      isPopular: false,
+      isVisible: true,
+      occasions: ["Formal Event", "Graduation", "Debut", "Dinner Event", "Photoshoot"],
+      stylingAdvice: {
+        makeupStyle: "Cool-toned shimmer with silver-taupe smoke and defined brows.",
+        lipColor: "Cool rosewood or mauve satin nude.",
+        hairstyle: "Sleek sculptural crown updo.",
+        tip: "Wear diamond or sapphire droplet earrings to complement the dramatic sapphire cape."
+      },
+      recommendedAccessories: [
+        {
+          id: "acc-1",
+          name: "Chandelier Crystal Drop Earrings",
+          category: "earrings",
+          price: 350,
+          photo: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+          description: "Pavé crystal drops that catch light beautifully.",
+          isAvailable: true,
+          isRentable: true
+        }
+      ],
+      views: {
+        front: "/src/assets/images/dress_royal_sapphire_cape_1791965046088.jpg",
+        back: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+        side: "/src/assets/images/dress_royal_sapphire_cape_1791965046088.jpg"
+      },
+      tags: ["Sapphire Blue", "Cape", "Gala", "Long Dress"]
+    },
+    {
+      id: "LR-106",
+      name: "The Vivienne Noir Corset Mermaid Gown",
+      designer: "Valérie & Co.",
+      description: "An iconic black-tie hourglass silhouette featuring an internal lace-up corset, strapless sweetheart neckline, and a sculptural fishtail train that glides with undeniable sophistication.",
+      category: "gala-black-tie",
+      lengthCategory: "long",
+      color: "Classic Onyx Black",
+      style: "Mermaid Corset Gown",
+      condition: "Pristine",
+      photos: [
+        "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+        "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg"
+      ],
+      coverPhoto: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+      videos: [],
+      sizes: [
+        { size: "US 2 / S", bust: "32 in", waist: "24-25 in", hips: "35 in", length: "60 in", inStock: true },
+        { size: "US 4 / M", bust: "34 in", waist: "26-27 in", hips: "37 in", length: "60 in", inStock: true },
+        { size: "US 6 / L", bust: "36 in", waist: "28-29 in", hips: "39 in", length: "61 in", inStock: true }
+      ],
+      rentalPrice3Day: 2500, // ₱2,500 for 3 days
+      rentalPrice5Day: 3300,
+      rentalPrice7Day: 4000,
+      extraDayRate: 450,
+      securityDeposit: 1500,
+      cleaningFee: 0,
+      retailPrice: 27500,
+      inventoryCount: 3,
+      isAvailable: true,
+      isFeatured: true,
+      isNewArrival: false,
+      isPopular: true,
+      isVisible: true,
+      occasions: ["Formal Event", "Dinner Event", "Photoshoot", "Special Celebration"],
+      stylingAdvice: {
+        makeupStyle: "Graphic feline eyeliner with flawless satin skin finish.",
+        lipColor: "Statement scarlet red.",
+        hairstyle: "Polished classic French twist.",
+        tip: "The quintessential timeless black gown. Pair with a sparkling crystal minaudière."
+      },
+      recommendedAccessories: [
+        {
+          id: "acc-2",
+          name: "Champagne Satin Minaudière Clutch",
+          category: "clutch",
+          price: 450,
+          photo: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+          description: "Structured evening clutch in rose-gold metal.",
+          isAvailable: true,
+          isRentable: true
+        }
+      ],
+      views: {
+        front: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+        back: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+        side: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg"
+      },
+      tags: ["Black Tie", "Mermaid", "Corset", "Long Dress"]
+    },
+    {
+      id: "LR-107",
+      name: "The Daisy Rose Sparkle Mini Party Dress",
+      designer: "Atelier Vesper",
+      description: "An enchanting short A-line dress in blushing champagne organza adorned with micro-sequins, a playful square neckline, and a flirty pleated skirt designed for birthday celebrations and photoshoots.",
+      category: "cocktail-evening-soiree",
+      lengthCategory: "short",
+      color: "Blush Sparkle",
+      style: "Pleated Mini Dress",
+      condition: "Pristine",
+      photos: [
+        "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg"
+      ],
+      coverPhoto: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+      videos: [],
+      sizes: [
+        { size: "US 2 / S", bust: "32 in", waist: "24-25 in", hips: "35 in", length: "34 in", inStock: true },
+        { size: "US 4 / M", bust: "34 in", waist: "26-27 in", hips: "37 in", length: "35 in", inStock: true },
+        { size: "US 6 / L", bust: "36 in", waist: "28-29 in", hips: "39 in", length: "35 in", inStock: true }
+      ],
+      rentalPrice3Day: 1600, // ₱1,600 for 3 days (Short Dress)
+      rentalPrice5Day: 2200,
+      rentalPrice7Day: 2700,
+      extraDayRate: 300,
+      securityDeposit: 1000,
+      cleaningFee: 0,
+      retailPrice: 16000,
+      inventoryCount: 3,
+      isAvailable: true,
+      isFeatured: false,
+      isNewArrival: true,
+      isPopular: true,
+      isVisible: true,
+      occasions: ["Birthday", "Photoshoot", "Evening Party", "Special Celebration"],
+      stylingAdvice: {
+        makeupStyle: "Glittering rose-gold eyelids with fluffy lashes and flushed coral cheeks.",
+        lipColor: "Sparkling peach gloss.",
+        hairstyle: "Bouncy soft Hollywood curls with pearl hairpins.",
+        tip: "Cute, youthful, and photo-ready. Pair with delicate rose-gold ankle-strap heels."
+      },
+      recommendedAccessories: [
+        {
+          id: "acc-4",
+          name: "Strap Metallic Stiletto Heels (Rose Gold)",
+          category: "heels",
+          price: 550,
+          photo: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg",
+          description: "Metallic rose gold heels with comfortable arch support.",
+          isAvailable: true,
+          isRentable: true
+        }
+      ],
+      views: {
+        front: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+        back: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+        side: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg"
+      },
+      tags: ["Blush", "Mini", "Short Dress", "Birthday", "Party"]
+    }
+  ],
+
+  bookings: [
+    {
+      id: "LR-BK-2001",
+      dressId: "LR-101",
+      dressName: "The Aurelia Liquid Silk Cape Gown",
+      dressCover: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+      customerName: "Bianca De Leon",
+      customerEmail: "bianca.deleon@example.com",
+      customerPhone: "+63 (917) 555-0199",
+      size: "US 4 / M",
+      startDate: "2026-10-18",
+      endDate: "2026-10-20",
+      durationDays: 3,
+      rentalPrice: 2800,
+      depositAmount: 1500,
+      cleaningFee: 0,
+      totalAmount: 4300,
+      status: "Payment Under Review",
+      depositStatus: "held",
+      createdAt: "2026-10-14T09:15:00.000Z",
+      deliveryOption: "courier_delivery",
+      deliveryAddress: "Unit 18B Tower One, Arya Residences, McKinley Parkway, BGC, Taguig",
+      cityMunicipality: "Taguig",
+      province: "Metro Manila",
+      postalCode: "1634",
+      paymentMethod: "GCash",
+      paymentReference: "GCASH-98421045291",
+      paymentDate: "2026-10-14",
+      paymentAmount: 4300,
+      paymentProofUrl: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+      notes: "Please deliver before 2:00 PM for styling team fitting.",
+      characterAvatar: "/src/assets/images/character_fairy_guide_1791999955704.jpg"
+    },
+    {
+      id: "LR-BK-1988",
+      dressId: "LR-102",
+      dressName: "The Verona Emerald Velvet Slit Gown",
+      dressCover: "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg",
+      customerName: "Camille Reyes",
+      customerEmail: "camille.reyes@example.com",
+      customerPhone: "+63 (918) 555-8832",
+      size: "US 4 / M",
+      startDate: "2026-10-02",
+      endDate: "2026-10-04",
+      durationDays: 3,
+      rentalPrice: 2600,
+      depositAmount: 1500,
+      cleaningFee: 0,
+      totalAmount: 4100,
+      status: "Returned",
+      depositStatus: "refunded",
+      createdAt: "2026-09-28T14:20:00.000Z",
+      deliveryOption: "boutique_fitting_pickup",
+      paymentMethod: "Bank Transfer (BDO)",
+      paymentReference: "BDO-REF-449102",
+      paymentDate: "2026-09-28",
+      paymentAmount: 4100,
+      verifiedPaymentAmount: 4100,
+      paymentVerifiedAt: "2026-09-29T10:00:00.000Z",
+      paymentVerifiedBy: "Administrator",
+      receiptNumber: "LR-REC-2026-1988",
+      characterAvatar: "/src/assets/images/character_fashion_princess_1791999979205.jpg"
+    }
+  ],
+
+  customers: [
+    {
+      id: "cust-bianca",
+      name: "Bianca De Leon",
+      email: "bianca.deleon@example.com",
+      phone: "+63 (917) 555-0199",
+      // password is 'password123'
+      passwordHash: "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+      characterId: "char-1",
+      characterName: "Flora",
+      characterAvatar: "/src/assets/images/character_fairy_guide_1791999955704.jpg",
+      totalRentals: 5,
+      completedRentalsCount: 5, // Reached milestone 1! 50% reward unlocked!
+      favorites: ["LR-101", "LR-103", "LR-104"],
+      deliveryAddress: "Unit 18B Tower One, Arya Residences, McKinley Parkway, BGC, Taguig",
+      cityMunicipality: "Taguig",
+      province: "Metro Manila",
+      postalCode: "1634",
+      redeemedRewards: [],
+      availableVouchers: [
+        {
+          code: "MAGIC50-BIANCA",
+          type: "50_percent_discount",
+          title: "50% OFF Next 3-Day Rental",
+          description: "Earned by completing 5 verified dress rentals at Lady's Rental.",
+          validUntil: "2026-12-31"
+        }
+      ],
+      joinedDate: "2026-06-15"
+    },
+    {
+      id: "cust-camille",
+      name: "Camille Reyes",
+      email: "camille.reyes@example.com",
+      phone: "+63 (918) 555-8832",
+      passwordHash: "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+      characterId: "char-2",
+      characterName: "Princess Aurelia",
+      characterAvatar: "/src/assets/images/character_fashion_princess_1791999979205.jpg",
+      totalRentals: 3,
+      completedRentalsCount: 3,
+      favorites: ["LR-102"],
+      redeemedRewards: [],
+      availableVouchers: [],
+      joinedDate: "2026-08-01"
+    }
+  ],
+
+  policies: {
+    securityDepositPercent: 50,
+    defaultRentalDays: 3,
+    extraDayFee: 400,
+    lateFeePerDay: 800,
+    cancellationPolicy: "Full refund if cancelled at least 7 days before rental start date. 50% refund if cancelled 3-6 days prior. Non-refundable within 48 hours.",
+    cleaningPolicy: "Complimentary professional eco-friendly sanitization and steam pressing is included in every rental. Do not wash or dry-clean dresses yourself.",
+    fittingPolicy: "Private fitting appointments can be scheduled Tuesday through Saturday at our BGC showroom. 1 complimentary second-size try-on backup is available on select dresses."
+  },
+
+  mediaLibrary: [
+    {
+      id: "med-1",
+      name: "enchanted_teal_door_garden.jpg",
+      url: "/src/assets/images/enchanted_teal_door_garden_1791999912250.jpg",
+      type: "image",
+      size: 450000,
+      uploadedAt: "2026-10-14T10:00:00.000Z",
+      linkedDressIds: []
+    },
+    {
+      id: "med-2",
+      name: "character_fairy_guide.jpg",
+      url: "/src/assets/images/character_fairy_guide_1791999955704.jpg",
+      type: "image",
+      size: 320000,
+      uploadedAt: "2026-10-14T10:00:00.000Z",
+      linkedDressIds: []
+    },
+    {
+      id: "med-3",
+      name: "dress_black_tie_mermaid.jpg",
+      url: "/src/assets/images/dress_black_tie_mermaid_1791965010742.jpg",
+      type: "image",
+      size: 380000,
+      uploadedAt: "2026-10-14T08:00:00.000Z",
+      linkedDressIds: ["LR-102", "LR-105", "LR-106"]
+    },
+    {
+      id: "med-4",
+      name: "dress_blush_rose_tulle.jpg",
+      url: "/src/assets/images/dress_blush_rose_tulle_1791965012666.jpg",
+      type: "image",
+      size: 410000,
+      uploadedAt: "2026-10-14T08:00:00.000Z",
+      linkedDressIds: ["LR-101", "LR-103", "LR-107"]
+    },
+    {
+      id: "med-5",
+      name: "dress_burgundy_silk_halter.jpg",
+      url: "/src/assets/images/dress_burgundy_silk_halter_1791965047255.jpg",
+      type: "image",
+      size: 360000,
+      uploadedAt: "2026-10-14T08:00:00.000Z",
+      linkedDressIds: ["LR-104"]
+    },
+    {
+      id: "med-6",
+      name: "dress_emerald_velvet_couture.jpg",
+      url: "/src/assets/images/dress_emerald_velvet_couture_1791965011577.jpg",
+      type: "image",
+      size: 420000,
+      uploadedAt: "2026-10-14T08:00:00.000Z",
+      linkedDressIds: ["LR-102"]
+    },
+    {
+      id: "med-7",
+      name: "dress_royal_sapphire_cape.jpg",
+      url: "/src/assets/images/dress_royal_sapphire_cape_1791965046088.jpg",
+      type: "image",
+      size: 395000,
+      uploadedAt: "2026-10-14T08:00:00.000Z",
+      linkedDressIds: ["LR-105"]
+    },
+    {
+      id: "med-8",
+      name: "hero_luxury_evening_gown.jpg",
+      url: "/src/assets/images/hero_luxury_evening_gown_1791965010105.jpg",
+      type: "image",
+      size: 440000,
+      uploadedAt: "2026-10-14T08:00:00.000Z",
+      linkedDressIds: ["LR-101"]
+    }
+  ],
+
+  seo: {
+    metaTitle: "Lady's Rental — Magical Fairy Garden & Luxury Dress Boutique Philippines",
+    metaDescription: "Rent dream designer gowns, debuts, and short & long evening dresses with standard 3-Day rentals, instant booking, and VIP loyalty rewards in the Philippines.",
+    keywords: "dress rental Philippines, gown rental Manila, debut dress rental, 3 day dress rental, evening gown BGC, designer dress rental",
+    ogImage: "/src/assets/images/enchanted_teal_door_garden_1791999912250.jpg"
+  }
+};
